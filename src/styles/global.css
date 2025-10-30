@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Peralta&family=Ribeye&family=Rubik+Iso&display=swap');
+@import "tailwindcss";
+
+@theme{
+    /* --color-primaryHvid: #f1efe9; */
+    --font-overskrift: "Rubik Iso";
+    --font-breadFont: "Peralta";
+}
