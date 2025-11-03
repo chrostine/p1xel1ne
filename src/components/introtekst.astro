@@ -1,18 +1,11 @@
 ---
+import Knap from '../components/knap.astro';
+import Boks from '../components/boks.astro';
 ---
 
 <div>
-    <div class="relative inline-block">
-    <img src="boks_01.png" alt="" class="w-full">
-    <div class="absolute inset-0 grid items-center justify-center text-center font-breadFont z-10 text-xl ml-5 mr-5">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-
-    </div>
-
-    </div>
-    <div class="grid items-center justify-center mt-5">
-        <a href="spil.astro";>
-            <p class="transition-opacity duration-200 hover:opacity-50 bg-buttonGul border-3 border-solid rounded-2xl font-overskrift text-4xl p-2 pr-4 pl-4 cursor-pointer">Start spillet</p>
-        </a>
+    <Boks teksten="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." hojden="240"></Boks>
+    <div class="mt-5">
+        <Knap linket="/spil" teksten="Start spillet"></Knap>
     </div>
 </div>

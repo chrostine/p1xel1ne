@@ -1,0 +1,29 @@
+---
+const { teksten } = Astro.props;
+const { hojden } = Astro.props;
+---
+
+<style>[x-cloak]{display:none}</style>
+
+<div
+  x-data="{ fullText: '', displayText: '', i: 0, speed: 25 }"
+  x-init="
+    fullText = $el.dataset.text;
+    setTimeout(() => {
+      const tick = () => {
+        if (i < fullText.length) {
+          displayText += fullText[i++];
+          setTimeout(tick, speed);
+        }
+      };
+      tick();
+    }, 3000);
+  "
+  x-cloak
+  data-text={teksten}
+  style={`height: ${hojden}px`}
+  class="grid text-center font-breadFont text-xl bg-buttonGul border-3 border-solid rounded-4xl p-4"
+>
+  <p x-text="displayText"></p>
+</div>
+
