@@ -6,3 +6,7 @@
     --font-overskrift: "Rubik Iso";
     --font-breadFont: "Peralta";
 }
+
+body{
+    background-color: #C7E8FF;
+}

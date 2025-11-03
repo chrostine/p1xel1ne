@@ -1,18 +1,66 @@
 ---
 import Logo from '../components/logo.astro';
+import Introtekst from '../components/introtekst.astro';
 ---
 
-<div class="grid justify-center lg:mt-25">
-    <div class="grid lg:grid-cols-2 justify-center items-center">
-        <Logo></Logo>
-        <img src="/Pixeline/pixeline_05.png" alt="" width="400px" class="lg:ml-5 ml-13">
+<style>[x-cloak]{display:none}</style>
+
+<div x-data="{ showLogo: true, reveal: false }" class="grid justify-center">
+  <div class="grid lg:grid-cols-2 gap-10 justify-center items-center lg:pt-24">
+
+    <div class="relative">
+      <div class="invisible">
+        <Logo />
+      </div>
+
+      <!-- Logo -->
+      <div
+        x-show="showLogo"
+        x-transition:leave="transition ease-in-out duration-1000"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @click="showLogo = false"
+        @transitionend="if ($event.propertyName === 'opacity' && !showLogo) reveal = true"
+        class="absolute inset-0 cursor-pointer"
+        >
+        <Logo />
+      </div>
+
+      <!-- Introtekst -->
+      <div
+        x-cloak
+        x-show="reveal"
+        x-transition:enter="transition ease-in-out duration-1000"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        class="absolute inset-0 lg:pt-0 pt-3"
+      >
+        <Introtekst />
+      </div>
     </div>
+
+    <!-- Kolonne 2 -->
+    <img src="/Pixeline/pixeline_05.png" alt="" width="400" class="lg:ml-5 ml-12" />
+  </div>
 </div>
 
 
-<!-- <div class="relative">
-  <div class="fixed inset-x-0 w-full -z-1 flex justify-center pointer-events-none select-none hidden lg:flex"
-    aria-hidden="true">
-    <img src="/Rooms/room_2.png" alt="" class="w-full"/>
-  </div>
-</div> -->
+
+
+
+
+  <!-- Fase 2 -->
+    <!-- <div
+        x-cloak
+        x-show="reveal"
+        x-transition:enter="transition ease-in-out duration-1000"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        class="grid gap-6 justify-center items-center"
+    >
+        <Header />
+        <div class="grid lg:grid-cols-2 justify-center items-center">
+            <img src="/Pixeline/pixeline_01.png" alt="" width="400" class="lg:ml-5 ml-13" />
+            <img src="/Pixeline/pixeline_01.png" alt="" width="400" class="lg:ml-5 ml-13" />
+        </div>
+    </div> -->
