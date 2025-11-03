@@ -3,10 +3,12 @@
 
 @theme{
     /* --color-primaryHvid: #f1efe9; */
+    --color-buttonGul: #fdf39f;
+    --color-bgBlue: #C7E8FF;
     --font-overskrift: "Rubik Iso";
     --font-breadFont: "Peralta";
 }
 
 body{
-    background-color: #C7E8FF;
+    background-color: var(--color-bgBlue);
 }
