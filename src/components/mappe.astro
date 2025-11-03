@@ -2,7 +2,7 @@
 const { mappen } = Astro.props;
 const { teksten } = Astro.props;
 ---
-<div class = "w-55 font-breadFont text-xl grid justify-items-center text-center hover:opacity-50">
+<div class = "w-55 font-breadFont text-xl grid justify-items-center text-center transition-opacity duration-200 hover:opacity-50">
     <a href=".">
         <img src={mappen} alt="" />
         <p class="pt-2">{teksten}</p>
