@@ -4,17 +4,34 @@ import "../styles/global.css";
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon-pixeline.png" />
-		<!-- <meta name="generator" content={Astro.generator} /> -->
-		<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-		<title>Pixeline</title>
-	</head>
-	<body>
-		<slot />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-pixeline.png" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <title>Pixeline</title>
+  </head>
+  <body class="transition-opacity duration-2000 ease-in-out">
+    <slot />
 
-	</body>
+    <script is:inline>
+      (function () {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) return;
+        const runFadeIn = () => {
+          const el = document.body;
+          el.classList.remove('opacity-100');
+          el.classList.add('opacity-0');
+          void el.offsetWidth;
+          requestAnimationFrame(() => el.classList.add('opacity-100'));
+        };
+        runFadeIn();
+        window.addEventListener('pageshow', (e) => {
+          if (e.persisted) runFadeIn();
+        });
+        document.addEventListener('astro:page-load', runFadeIn);
+        document.addEventListener('astro:after-swap', runFadeIn);
+      })();
+    </script>
+  </body>
 </html>
-

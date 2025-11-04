@@ -1,0 +1,28 @@
+---
+const { teksten } = Astro.props;
+
+---
+
+<style>[x-cloak]{display:none}</style>
+
+    <div
+    x-data="{ fullText: '', displayText: '', i: 0, speed: 25 }"
+    x-init="
+        fullText = $el.dataset.text;
+        setTimeout(() => {
+        const tick = () => {
+            if (i < fullText.length) {
+            displayText += fullText[i++];
+            setTimeout(tick, speed);
+            }
+        };
+        tick();
+        }, 2000);
+    "
+    x-cloak
+    data-text={teksten}
+
+    class="grid align-center bg-buttonGul border-3 border-solid rounded-t-4xl font-breadFont lg:text-2xl text-l p-3 lg:p-17 lg:pr-22 lg:pl-22 h-[35vh] lg:h-[23vh]"
+    >
+    <p x-text="displayText"></p>
+    </div>

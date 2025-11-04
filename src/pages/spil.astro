@@ -1,9 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-
+import Footer from '../components/Footer.astro';
+import Computer from '../components/Computer.astro';
+import Baggrund from '../components/baggrund.astro';
 ---
 
 <Layout>
-	<Header></Header>
+	<Baggrund baggrundsbillede="/Rooms/room_2.png" />
+	<div class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <Header />
+      <Computer />
+    </main>
+    <Footer class="mt-auto" />
+  </div>
 </Layout>

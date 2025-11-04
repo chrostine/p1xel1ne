@@ -1,6 +1,7 @@
 ---
 import Logo from '../components/logo.astro';
 import Introtekst from '../components/introtekst.astro';
+import Knap from '../components/knap.astro';
 ---
 
 <style>[x-cloak]{display:none}</style>
@@ -36,6 +37,7 @@ import Introtekst from '../components/introtekst.astro';
         class="absolute inset-0 lg:pt-0 pt-3 items-start"
       >
         <Introtekst />
+        <Knap linket="/spil" teksten="Start spillet"></Knap>
       </div>
     </div>
 
@@ -43,24 +45,3 @@ import Introtekst from '../components/introtekst.astro';
     <img src="/Pixeline/pixeline_05.png" alt="" width="400" class="lg:ml-5 ml-12" />
   </div>
 </div>
-
-
-
-
-
-
-  <!-- Fase 2 -->
-    <!-- <div
-        x-cloak
-        x-show="reveal"
-        x-transition:enter="transition ease-in-out duration-1000"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        class="grid gap-6 justify-center items-center"
-    >
-        <Header />
-        <div class="grid lg:grid-cols-2 justify-center items-center">
-            <img src="/Pixeline/pixeline_01.png" alt="" width="400" class="lg:ml-5 ml-13" />
-            <img src="/Pixeline/pixeline_01.png" alt="" width="400" class="lg:ml-5 ml-13" />
-        </div>
-    </div> -->
