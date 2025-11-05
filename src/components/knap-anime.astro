@@ -1,10 +1,12 @@
 ---
 import KnapStyle from '../components/knap-style.astro';
-
 const { teksten } = Astro.props;
-
+const { hojden } = Astro.props;
+const { bredden } = Astro.props;
 ---
 
-<div class="grid items-center justify-center">
-        <KnapStyle teksten={teksten} />
+<div class="fixed z-10 flex pointer-events-none select-none hidden xl:flex" style={`top: ${hojden}px; margin-left: ${bredden}px;`}>
+  <div class="grid items-center justify-center pointer-events-auto">
+    <KnapStyle teksten={teksten} />
+  </div>
 </div>
