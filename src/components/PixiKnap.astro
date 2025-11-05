@@ -1,0 +1,17 @@
+---
+const { billedet } = Astro.props;
+const { hojden } = Astro.props;
+const { bredden } = Astro.props;
+const { teksten } = Astro.props;
+import KnapStyle from '../components/knap-style.astro';
+---
+
+<div
+  class="fixed inset-x-0 z-1 grid grid-cols-2 items-center pointer-events-none select-none hidden xl:grid w-3xl" style={`top: ${hojden}px; margin-left: 2.5rem; margin-top: 300px;`}>
+  <div class="flex justify-start xl:ml-10 2xl:ml-20">
+    <img src={billedet} alt="" style={`width: ${bredden}px`} class="transform scale-x-[-1]"/>
+  </div>
+  <div class="flex justify-start pointer-events-auto mb-25">
+    <KnapStyle teksten={teksten} />
+  </div>
+</div>

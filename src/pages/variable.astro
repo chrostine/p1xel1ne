@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderLeft from '../components/HeaderLeft.astro';
+import Footer from '../components/Footer.astro';
+import PixiKnap from '../components/PixiKnap.astro';
+import Baggrund from '../components/baggrund.astro';
+---
+
+<Layout>
+	<Baggrund baggrundsbillede="/Rooms/room_3.png" />
+	<div class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <HeaderLeft />
+      <PixiKnap billedet="/Pixeline/pixeline_03.png" hojden="190" bredden="300" teksten="Start"/>
+    </main>
+    <Footer teksten="I dag skal vi lære om noget rigtig smart — nemlig variabler! En variabel er som en lille æske, hvor du kan gemme ting, du vil bruge senere i dit program. Du kan lægge tal, ord eller endda hele sætninger i den! Variabler hjælper os med at holde styr på alting i vores kode — lidt som at have navneskilte på alle vores data! Klik på start for at komme i gang" class="mt-auto" />
+  </div>
+</Layout>

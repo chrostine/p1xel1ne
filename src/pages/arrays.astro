@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderLeft from '../components/HeaderLeft.astro';
+import Footer from '../components/Footer.astro';
+import PixiKnap from '../components/PixiKnap.astro';
+import Baggrund from '../components/baggrund.astro';
+---
+
+<Layout>
+	<Baggrund baggrundsbillede="/Rooms/room_4.png" />
+	<div class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <HeaderLeft />
+      <PixiKnap billedet="/Pixeline/pixeline_01.png" hojden="165" bredden="430" teksten="Start"/>
+    </main>
+    <Footer teksten="I dag skal vi kigge på noget supersejt, som hedder arrays! Et array er som en liste, hvor du kan gemme flere ting på én gang — fx tal, navne eller farver. Arrays er smarte, fordi de hjælper os med at holde styr på mange værdier samtidig. Så næste gang du har en masse data, du vil gemme — så lav et array! Klik på start for at komme i gang" class="mt-auto" />
+  </div>
+</Layout>

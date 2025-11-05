@@ -1,6 +1,30 @@
 ---
-import FooterNav from '../components/footer_nav.astro';
+const { teksten } = Astro.props;
+
 ---
+
+<style>[x-cloak]{display:none}</style>
+
 <div class="z-2">
-    <FooterNav teksten="Hej, mit navn er Pixeline! Hvor er det fedt, at du vil med mig videre på vores kodeeventyr. Nu hvor du allerede har lært lidt om, hvordan man tænker som en programmør, skal vi prøve nogle nye udfordringer sammen. Du kommer til at bygge små programmer, løse logiske gåder og opdage, hvordan kode kan få verden omkring os til at reagere. Klar til at trylle med tastaturet og vise, hvad du kan? Så lad os komme i gang!"></FooterNav>
+    <div
+    x-data="{ fullText: '', displayText: '', i: 0, speed: 25 }"
+    x-init="
+        fullText = $el.dataset.text;
+        setTimeout(() => {
+        const tick = () => {
+            if (i < fullText.length) {
+            displayText += fullText[i++];
+            setTimeout(tick, speed);
+            }
+        };
+        tick();
+        }, 2000);
+    "
+    x-cloak
+    data-text={teksten}
+
+    class="grid align-center bg-buttonGul border-3 border-solid rounded-t-4xl font-breadFont lg:text-2xl text-l p-3 lg:p-17 lg:pr-22 lg:pl-22 h-[35vh] lg:h-[23vh]"
+    >
+    <p x-text="displayText"></p>
+    </div>
 </div>

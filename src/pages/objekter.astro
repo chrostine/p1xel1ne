@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderLeft from '../components/HeaderLeft.astro';
+import Footer from '../components/Footer.astro';
+import PixiExplain from '../components/PixiExplain.astro';
+import Baggrund from '../components/baggrund.astro';
+---
+
+<Layout>
+	<Baggrund baggrundsbillede="/Rooms/room_7.png" />
+	<div class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <HeaderLeft />
+      <PixiExplain billedet="/Pixeline/pixeline_11.png" hojden="230" bredden="730"/>
+    </main>
+    <Footer teksten="I dag skal vi snakke om objekter — en af de sejeste ting i JavaScript! Et objekt er som en lille mappe, hvor du kan samle flere oplysninger, der hører sammen. Objekter hjælper os med at holde styr på data, der hænger sammen, så vores programmer bliver mere organiserede — lidt som at have mapper med etiketter i et supersejt kodebibliotek!" class="mt-auto" />
+  </div>
+</Layout>

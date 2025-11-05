@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Computer from '../components/Computer.astro';
 import Baggrund from '../components/baggrund.astro';
+import PixiBig from '../components/PixiBig.astro';
 ---
 
 <Layout>
@@ -11,8 +12,9 @@ import Baggrund from '../components/baggrund.astro';
 	<div class="flex flex-col min-h-screen">
     <main class="flex-grow">
       <Header />
+      <PixiBig billedet="/Pixeline/pixeline_02.png" hojden="190" bredden="300"/>
       <Computer />
     </main>
-    <Footer class="mt-auto" />
+    <Footer teksten="Hej, mit navn er Pixeline! Hvor er det fedt, at du vil med mig videre på vores kodeeventyr. Nu hvor du allerede har lært lidt om, hvordan man tænker som en programmør, skal vi prøve nogle nye udfordringer sammen. Du kommer til at bygge små programmer, løse logiske gåder og opdage, hvordan kode kan få verden omkring os til at reagere. Klar til at trylle med tastaturet og vise, hvad du kan? Så lad os komme i gang!" class="mt-auto" />
   </div>
 </Layout>

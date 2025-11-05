@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderLeft from '../components/HeaderLeft.astro';
+import Footer from '../components/Footer.astro';
+import PixiKnap from '../components/PixiKnap.astro';
+import Baggrund from '../components/baggrund.astro';
+---
+
+<Layout>
+	<Baggrund baggrundsbillede="/Rooms/room_4.png" />
+	<div class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <HeaderLeft />
+      <PixiKnap billedet="/Pixeline/pixeline_06.png"  hojden="160" bredden="375" teksten="Start"/>
+    </main>
+    <Footer teksten="I dag skal vi lære om noget, der får din kode til at tænke selv — nemlig if-betingelser! En if-betingelse lader computeren vælge, hvad der skal ske, alt efter om noget er sandt eller falsk. Det er som at sige: “Hvis det regner, så tager jeg en paraply — ellers løber jeg ud i solen!” Med if kan du altså få din kode til at reagere på situationer — lidt som at give computeren sin egen lille hjerne! Klik på start for at komme i gang" class="mt-auto" />
+  </div>
+</Layout>

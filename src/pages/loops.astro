@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderLeft from '../components/HeaderLeft.astro';
+import Footer from '../components/Footer.astro';
+import PixiBigR from '../components/PixiBigR.astro';
+import Baggrund from '../components/baggrund.astro';
+---
+
+<Layout>
+	<Baggrund baggrundsbillede="/Rooms/room_3.png" />
+	<div class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <HeaderLeft />
+      <PixiBigR billedet="/Pixeline/pixeline_04.png" hojden="560" bredden="550"/>
+    </main>
+    <Footer teksten="I dag skal vi lære om noget, der gør koden hurtig og effektiv — nemlig loops! Et loop er som en gentagelsesknap. Det får computeren til at gøre det samme flere gange, uden du behøver skrive koden igen og igen. Smart, ikke? Loops er fantastiske, når du skal gennemgå lister, vise mange ting på én gang eller bare spare tid i din kode. Det er som at have en hjælper, der aldrig bliver træt af at gentage sig selv!" class="mt-auto" />
+  </div>
+</Layout>

@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderLeft from '../components/HeaderLeft.astro';
+import Footer from '../components/Footer.astro';
+import PixiExplain from '../components/PixiExplain.astro';
+import Baggrund from '../components/baggrund.astro';
+---
+
+<Layout>
+	<Baggrund baggrundsbillede="/Rooms/room_7.png" />
+	<div class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <HeaderLeft />
+      <PixiExplain billedet="/Pixeline/pixeline_08.png" hojden="250" bredden="730"/>
+    </main>
+    <Footer teksten="Nu skal vi lære om noget, der gør koden både sjovere og smartere — nemlig funktioner! En funktion er som en lille maskine, du selv bygger. Du giver den et navn og fortæller den, hvad den skal gøre. Når du så kalder funktionen, udfører den sin opgave — præcis som du har planlagt! Funktioner er superpraktiske, fordi du kan genbruge den samme kode igen og igen — uden at skrive det hele forfra. Det er som at have dine egne små hjælperobotter i koden!" class="mt-auto" />
+  </div>
+</Layout>

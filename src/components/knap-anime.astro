@@ -1,12 +1,10 @@
 ---
 import KnapStyle from '../components/knap-style.astro';
-const { linket } = Astro.props;
+
 const { teksten } = Astro.props;
 
 ---
 
 <div class="grid items-center justify-center">
-    <a href={linket}>
         <KnapStyle teksten={teksten} />
-    </a>
 </div>
